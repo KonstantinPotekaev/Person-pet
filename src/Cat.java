@@ -1,17 +1,13 @@
-public class Cat {
+public class Cat extends Pet implements Pet_Interface {
 
-    private boolean _besidePerson = false;
-    public void Answer() {
-        System.out.println("Мяу");
-        _besidePerson = true;
+    public Cat(String name){
+        super(name);
     }
 
+    public void Voice(){
+        System.out.println("Мяу-мяу");
+    }
     public void Pleasure(){
-        System.out.println("Мур-мур-мур");
-        _besidePerson = false;
-    }
-
-    public boolean isBesidePerson(){
-        return _besidePerson;
+        System.out.println("Мур-мур");
     }
 }
