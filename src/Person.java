@@ -1,39 +1,36 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Person {
-    private List<Cat> cats = new ArrayList<>();
 
-    public void AddNewCat(Cat cat){
-        int isNotANewCat = 0;
-        for (var i : cats){
-            if (i == cat){
-                isNotANewCat = 1;
-            }
-        }
-        if (isNotANewCat == 0){
-            cats.add(cat);
+    private List<Pet> pets = new ArrayList<>();
+
+    public void addNewPet(Pet pet){
+        if (!pets.contains(pet)) {
+            pets.add((Pet) pet);
         }
     }
 
-    public void CallCat(Cat cat){
-        if (cats.contains(cat)){
-            System.out.println("Кис-Кис");
-            cat.Answer();
-        }
-    }
-    public void PetCat(Cat cat){
-        if(!cats.contains(cat)){
-            System.out.println("У человека нет такого кота");
-        }
-        else if (!cat.isBesidePerson()){
-            System.out.println("Кот далеко от человека");
+    public void callPet(Pet pet){
+        if (!pets.contains(pet)){
+            Pet.noSuchPet();
         }
         else{
-            cat.Pleasure();
+            pet.voice();
+            pet.changePosition(true);
         }
-
     }
-
-
+    public void petTheAnimal(Pet pet){
+        if (!pets.contains(pet)){
+            Pet.noSuchPet();
+        }
+        else if (!pet.getPosition()){
+            pet.tooFar();
+        }
+        else{
+            pet.pleasure();
+            pet.changePosition(false);
+        }
+    }
 }
