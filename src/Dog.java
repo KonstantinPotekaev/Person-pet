@@ -3,12 +3,12 @@ public class Dog extends Pet implements Pet_Interface {
     public Dog(String name){
         super(name);
     }
-
-    public void Voice(){
+    @Override
+    public void voice(){
         System.out.println("Гав-гав");
     }
-
-    public void Pleasure(){
+    @Override
+    public void pleasure(){
         System.out.println("*Собака веляет хвостом*");
     }
 }

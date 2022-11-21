@@ -4,11 +4,12 @@ public class Main {
         var p = new Person();
         var cat = new Cat("Дуся");
         var dog = new Dog("Тоби");
-        p.AddNewPet(cat);
-        p.CallPet(cat);
-        p.PetPet(cat);
-        p.AddNewPet(dog);
-        p.CallPet(dog);
-        p.PetPet(dog);
+        p.addNewPet(cat);
+        p.callPet(cat);
+        p.petTheAnimal(cat);
+        p.addNewPet(dog);
+        p.callPet(dog);
+        p.petTheAnimal(dog);
+
     }
 }

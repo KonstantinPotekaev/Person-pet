@@ -4,10 +4,13 @@ public class Cat extends Pet implements Pet_Interface {
         super(name);
     }
 
-    public void Voice(){
+    @Override
+    public void voice() {
         System.out.println("Мяу-мяу");
     }
-    public void Pleasure(){
+    @Override
+    public void pleasure(){
         System.out.println("Мур-мур");
     }
+
 }
